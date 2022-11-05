@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 import { setFilter } from '../../redux/filterSlice';
+import styles from "./Filter.module.css"
 
 function Filter() {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ function Filter() {
         value={filterValue}
         type="text"
         name="filter"
+        className={styles.input}
       />
     </label>
   );

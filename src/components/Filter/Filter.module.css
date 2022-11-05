@@ -4,7 +4,9 @@
     padding: 5px;
     border-radius: 3px;
     outline: none;
-    transition: border-color 250ms linear;
+    border-color: #f44336 #2196f3 #4caf50 #ff9800;
+    
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
 }

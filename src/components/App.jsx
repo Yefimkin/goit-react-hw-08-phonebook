@@ -16,8 +16,8 @@ function App() {
         <h2>Contacts</h2>
         <Filter />
         <ContactsList />
+        <ToastContainer autoClose={2000} />
       </Container>
-      <ToastContainer autoClose={2000} />
     </div>
   );
 }

@@ -79,12 +79,7 @@ const ContactForm = () => {
       />
       {addingLoader ?
         <Loader /> :
-        <button type='submit'>Add contact</button>
-        // <Button
-        //   text="Add Contact"
-        //   type="submit"
-        //   disabled={number && name ? false : true}
-        // />
+        <button type='submit' className={style.addButton} disabled={number && name ? false : true}>Add contact</button>
       }
     </form>
   );
