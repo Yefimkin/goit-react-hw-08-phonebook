@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getContacts } from '../../redux/contactsSlice';
-import { addContact } from 'redux/asyncThunk';
+import { getContacts } from 'redux/contacts/contactsSlice';
+import { addContact } from 'redux/contacts/contactsOperation';
 import { nanoid } from 'nanoid'
-import style from './ContactForm.module.css';
+
 import { Loader } from '../Loader/Loader';
 import { toast } from 'react-toastify';
+
+import style from './ContactForm.module.css';
 
 const ContactForm = () => {
     const [name, setName] = useState('');

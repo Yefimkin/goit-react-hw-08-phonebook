@@ -1,18 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 
-import { fetchContacts, addContact, deleteContact } from './asyncThunk';
+import { fetchContacts, addContact, deleteContact } from './contactsOperation';
 
 const initialState = {
-  items: [],
-  isLoading: false,
-  addingLoader: false,
-  error: null,
+    items: [],
+    isLoading: false,
+    addingLoader: false,
+    error: null,
 };
 
 export const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
+  reducers: {},
   extraReducers: {
     [fetchContacts.pending](state) {
       state.isLoading = true;
@@ -33,7 +34,9 @@ export const contactsSlice = createSlice({
       state.addingLoader = false;
       state.error = null;
       state.items.unshift(payload);
-      toast.success('Success!');
+      toast.success('Success!', {
+        theme: "dark"
+      });
     },
     [addContact.rejected](state, { payload }) {
       state.addingLoader = false;
@@ -42,7 +45,9 @@ export const contactsSlice = createSlice({
     [deleteContact.fulfilled](state, { payload }) {
       state.error = null;
       state.items = state.items.filter(item => item.id !== payload);
-      toast.info('Deleted');
+      toast.info('Deleted', {
+        theme: "dark"
+      });
     },
     [deleteContact.rejected](state, { payload }) {
       state.error = payload;
@@ -50,4 +55,5 @@ export const contactsSlice = createSlice({
   },
 });
 
+// Selector
 export const getContacts = state => state.contacts;

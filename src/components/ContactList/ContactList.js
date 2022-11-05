@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchContacts } from 'redux/asyncThunk'
-import { getContacts } from 'redux/contactsSlice';
+import { fetchContacts } from 'redux/contacts/contactsOperation'
+import { getContacts } from 'redux/contacts/contactsSlice';
 import { getFilter } from 'redux/filterSlice';
 import style from './ContactList.module.css';
 import ContactItem from '../ContactItem/ContactItem';
@@ -28,11 +28,10 @@ const ContactList = () => {
     const contactsToRender = getFilteredContacts()
 
     return <ul className={style.list}>
-        {isLoading && <div><Loader /></div>}
+        {isLoading ? <div><Loader /></div> :
+        contactsToRender.map(item =>
+            <ContactItem key={item.id} data={item} />)}
         {error && <div>Something went wrong, please, try again</div>}
-        {contactsToRender.map(item =>
-            <ContactItem key={item.id} data={item} />)
-        }
     </ul>
 }
 
