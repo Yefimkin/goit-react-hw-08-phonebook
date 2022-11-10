@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 import { getAuthentication } from 'redux/authentication/authenticationSlice';
 import { loginUser } from 'redux/authentication/authenticationOperation'
 import { Loader } from '../Loader/Loader'
-import style from './ContactForm.module.css';
+import style from '../ContactForm/ContactForm.module.css';
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');

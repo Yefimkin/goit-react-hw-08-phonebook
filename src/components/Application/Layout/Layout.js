@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { Outlet } from 'react-router-dom';
 
 import { RouteLoader } from "../Loader/Loader";
-import { UserMenu } from "components/UserMenu/UserMenu";
+import { UserMenu } from "components/Application/UserMenu/UserMenu";
 
 export const Layout = () => {
     return <div style={{ padding: "0 25px"}}>

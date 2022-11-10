@@ -23,19 +23,19 @@ const setCurrentToken = token => {
   setToken.unset();
 };
 
-export async function register(signupData) {
+export async function registerUser(signupData) {
   const { data } = await instance.post('/users/signup', signupData);
   setToken.set(data.token);
   return data;
 }
 
-export async function login(signupData) {
+export async function loginUser(signupData) {
   const { data } = await instance.post('/users/login', signupData);
   setToken.set(data.token);
   return data;
 }
 
-export async function fetchCurrent(token) {
+export async function fetchCurrentUser(token) {
   try {
     setCurrentToken(token);
     const data = await instance.get('/users/current');
@@ -46,7 +46,7 @@ export async function fetchCurrent(token) {
   }
 }
 
-export async function logout() {
+export async function logoutUser() {
   const data = await instance.post('/users/logout');
   setToken.unset();
   return data.data;

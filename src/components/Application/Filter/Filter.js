@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
-import { setFilter } from '../../redux/filterSlice';
+import { setFilter } from 'redux/filterSlice';
 import styles from "./Filter.module.css"
 
 function Filter() {
