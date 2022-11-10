@@ -94,4 +94,4 @@ export const authenticationSlice = createSlice({
 });
 
 // Selector
-export const getAuthentication = state => state.auth;
+export const getAuthentication = state => state.authentication;

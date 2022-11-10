@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAuthentication } from 'redux/authentication/authenticationSlice';
-import { logoutUser } from 'redux/authentication/authenticationOperation';
+import { logout } from 'redux/authentication/authenticationOperation';
 import { NavLink, useNavigate } from 'react-router-dom';
 import style from './UserMenu.module.css'
 
@@ -11,7 +11,7 @@ export const UserMenu = () => {
     const navigate = useNavigate();
 
     const onLogoutClick = () => {
-        dispatch(logoutUser())
+        dispatch(logout())
         navigate('/login')
     }
 
