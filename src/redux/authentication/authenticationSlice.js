@@ -1,7 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 
-import { registerUser, loginUser, logoutUser, fetchCurrentUser } from 'loginApi/loginApi';
+import {
+  registerUser,
+  loginUser,
+  logoutUser,
+  fetchCurrentUser,
+} from 'loginApi/loginApi';
 
 const initialState = {
   user: { name: null, email: null },
@@ -27,14 +32,14 @@ export const authenticationSlice = createSlice({
       state.token = payload.token;
       state.user = payload.user;
       toast.success('Successfully registered!', {
-        theme: "dark"
+        theme: 'dark',
       });
     },
     [registerUser.rejected](state, { payload }) {
       state.isLoading = false;
       state.error = payload;
       toast.error('Something is wrong, try again!', {
-        theme: "dark"
+        theme: 'dark',
       });
     },
     [loginUser.pending](state) {
@@ -47,14 +52,14 @@ export const authenticationSlice = createSlice({
       state.token = payload.token;
       state.user = payload.user;
       toast.success('Successfully logged in!', {
-        theme: "dark"
+        theme: 'dark',
       });
     },
     [loginUser.rejected](state, { payload }) {
       state.isLoading = false;
       state.error = payload;
       toast.error('Something is wrong, try again!', {
-        theme: "dark"
+        theme: 'dark',
       });
     },
     [logoutUser.pending](state) {
@@ -67,14 +72,14 @@ export const authenticationSlice = createSlice({
       state.user = { name: null, email: null };
       state.token = null;
       toast.success('Successfully logged out! Waiting for you to come back!', {
-        theme: "dark"
+        theme: 'dark',
       });
     },
     [logoutUser.rejected](state, { payload }) {
       state.isLoading = false;
       state.error = payload;
       toast.error('Something is wrong, try again later!', {
-        theme: "dark"
+        theme: 'dark',
       });
     },
     [fetchCurrentUser.pending](state) {
@@ -93,5 +98,4 @@ export const authenticationSlice = createSlice({
   },
 });
 
-// Selector
 export const getAuthentication = state => state.authentication;
