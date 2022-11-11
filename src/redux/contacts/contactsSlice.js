@@ -4,10 +4,10 @@ import { toast } from 'react-toastify';
 import { fetchContacts, addContact, deleteContact } from './contactsOperation';
 
 const initialState = {
-    items: [],
-    isLoading: false,
-    addingLoader: false,
-    error: null,
+  items: [],
+  isLoading: false,
+  addingLoader: false,
+  error: null,
 };
 
 export const contactsSlice = createSlice({
@@ -35,7 +35,7 @@ export const contactsSlice = createSlice({
       state.error = null;
       state.items.unshift(payload);
       toast.success('Success!', {
-        theme: "dark"
+        theme: 'dark',
       });
     },
     [addContact.rejected](state, { payload }) {
@@ -46,7 +46,7 @@ export const contactsSlice = createSlice({
       state.error = null;
       state.items = state.items.filter(item => item.id !== payload);
       toast.info('Deleted', {
-        theme: "dark"
+        theme: 'dark',
       });
     },
     [deleteContact.rejected](state, { payload }) {
@@ -55,5 +55,4 @@ export const contactsSlice = createSlice({
   },
 });
 
-// Selector
 export const getContacts = state => state.contacts;
