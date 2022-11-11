@@ -8,7 +8,7 @@ import Container from '../Container/Container';
 export const Layout = () => {
   return (
     <Container>
-      <div style={{ padding: '0 25px' }}>
+      <div>
         <UserMenu />
         <Suspense fallback={<Loader />}>
           <Outlet />
