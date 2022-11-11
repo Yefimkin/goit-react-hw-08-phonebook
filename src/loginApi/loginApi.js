@@ -52,7 +52,6 @@ export async function logoutUser() {
   return data.data;
 }
 
-
 export async function fetchContactsFromApi() {
   const data = await instance.get('/contacts');
   return data.data;
