@@ -6,7 +6,7 @@ import {
   loginUser,
   logoutUser,
   fetchCurrentUser,
-} from 'loginApi/loginApi';
+} from './authenticationOperation';
 
 const initialState = {
   user: { name: null, email: null },

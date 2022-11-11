@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
 import { getAuthentication } from 'redux/authentication/authenticationSlice';
-import { login } from 'redux/authentication/authenticationOperation';
+import { loginUser } from 'redux/authentication/authenticationOperation';
 import { Loader } from '../Loader/Loader';
 import style from '../ContactForm/ContactForm.module.css';
 
@@ -32,7 +32,7 @@ const LoginForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    dispatch(login({ email: email, password: password }));
+    dispatch(loginUser({ email: email, password: password }));
 
     setEmail('');
     setPassword('');

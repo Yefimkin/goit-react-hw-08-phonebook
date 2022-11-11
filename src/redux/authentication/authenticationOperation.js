@@ -1,17 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import {
-  registerUser,
-  loginUser,
-  logoutUser,
-  fetchCurrentUser,
-} from 'loginApi/loginApi';
+import { register, login, logout, fetchCurrent } from 'loginApi/loginApi';
 
-export const register = createAsyncThunk(
+export const registerUser = createAsyncThunk(
   'user/register',
   async (data, { rejectWithValue }) => {
     try {
-      const user = await registerUser(data);
+      const user = await register(data);
       return user;
     } catch ({ response }) {
       const error = {
@@ -23,11 +18,11 @@ export const register = createAsyncThunk(
   }
 );
 
-export const login = createAsyncThunk(
+export const loginUser = createAsyncThunk(
   'user/login',
   async (data, { rejectWithValue }) => {
     try {
-      const user = await loginUser(data);
+      const user = await login(data);
       return user;
     } catch ({ response }) {
       const error = {
@@ -39,11 +34,11 @@ export const login = createAsyncThunk(
   }
 );
 
-export const logout = createAsyncThunk(
+export const logoutUser = createAsyncThunk(
   'user/logout',
   async (_, { rejectWithValue }) => {
     try {
-      const result = await logoutUser();
+      const result = await logout();
       return result;
     } catch ({ response }) {
       const error = {
@@ -55,12 +50,12 @@ export const logout = createAsyncThunk(
   }
 );
 
-export const fetchCurrent = createAsyncThunk(
+export const fetchCurrentUser = createAsyncThunk(
   'user/current',
   async (_, { rejectWithValue, getState }) => {
     try {
       const { authentication } = getState();
-      const response = await fetchCurrentUser(authentication.token);
+      const response = await fetchCurrent(authentication.token);
       return response;
     } catch ({ response }) {
       const error = {

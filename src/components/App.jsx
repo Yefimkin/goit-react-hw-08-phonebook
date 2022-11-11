@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { fetchCurrent } from 'redux/authentication/authenticationOperation';
+import { fetchCurrentUser } from 'redux/authentication/authenticationOperation';
 import { getAuthentication } from 'redux/authentication/authenticationSlice';
 
 import { Layout } from './Application/Layout/Layout';
@@ -25,7 +25,7 @@ function App() {
   const { isLoadingUser } = useSelector(getAuthentication);
 
   useEffect(() => {
-    dispatch(fetchCurrent());
+    dispatch(fetchCurrentUser());
   }, [dispatch]);
   return (
     <>

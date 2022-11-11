@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
 import { getAuthentication } from 'redux/authentication/authenticationSlice';
-import { register } from 'redux/authentication/authenticationOperation';
+import { registerUser } from 'redux/authentication/authenticationOperation';
 import { Loader } from '../Loader/Loader';
 import style from '../ContactForm/ContactForm.module.css';
 
@@ -34,7 +34,7 @@ const RegisterForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    dispatch(register({ name: name, email: email, password: password }));
+    dispatch(registerUser({ name: name, email: email, password: password }));
 
     setName('');
     setEmail('');
