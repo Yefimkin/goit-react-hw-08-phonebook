@@ -53,7 +53,7 @@ const LoginForm = () => {
         value={email}
         onChange={handleChange}
         required
-        placeholder="your_email"
+        placeholder="Enter your Email"
         className={style.input}
       />
       <label className={style.label} htmlFor={passwordId}>

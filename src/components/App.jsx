@@ -10,7 +10,7 @@ import { getAuthentication } from 'redux/authentication/authenticationSlice';
 import { Layout } from './Application/Layout/Layout';
 import { PrivateRoute } from './Routes/PrivateRoute';
 import { PublicRoute } from './Routes/PublicRoute';
-import { RouteLoader } from './Application/Loader/Loader';
+import { Loader } from './Application/Loader/Loader';
 
 const RegisterForm = lazy(() =>
   import('../components/Application/RegisterForm/RegisterForm')
@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       {isLoadingUser ? (
-        <RouteLoader />
+        <Loader />
       ) : (
         <Routes>
           <Route path="/" element={<Layout />}>
