@@ -58,8 +58,8 @@ const ContactForm = () => {
   const numberId = nanoid();
 
   return (
-    <form onSubmit={onFormSubmit}>
-      <label className={style.form} htmlFor={nameId}>
+    <form onSubmit={onFormSubmit} className={style.form}>
+      <label htmlFor={nameId} className={style.label}>
         Name
       </label>
       <input
@@ -73,7 +73,7 @@ const ContactForm = () => {
         required
         className={style.input}
       />
-      <label className={style.form} htmlFor={numberId}>
+      <label htmlFor={numberId} className={style.label}>
         Number
       </label>
       <input

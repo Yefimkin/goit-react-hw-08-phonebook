@@ -4,7 +4,6 @@ import { nanoid } from 'nanoid';
 import { getAuthentication } from 'redux/authentication/authenticationSlice';
 import { loginUser } from 'redux/authentication/authenticationOperation';
 import { Loader } from '../Loader/Loader';
-import style from '../ContactForm/ContactForm.module.css';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -33,9 +32,6 @@ const LoginForm = () => {
     e.preventDefault();
 
     dispatch(loginUser({ email: email, password: password }));
-
-    setEmail('');
-    setPassword('');
   };
 
   const emailId = useMemo(() => nanoid(), []);
@@ -43,9 +39,7 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label className={style.label} htmlFor={emailId}>
-        Email
-      </label>
+      <label htmlFor={emailId}>Email</label>
       <input
         id={emailId}
         type="email"
@@ -54,11 +48,8 @@ const LoginForm = () => {
         onChange={handleChange}
         required
         placeholder="Enter your Email"
-        className={style.input}
       />
-      <label className={style.label} htmlFor={passwordId}>
-        Password
-      </label>
+      <label htmlFor={passwordId}>Password</label>
       <input
         id={passwordId}
         type="password"
@@ -67,15 +58,8 @@ const LoginForm = () => {
         onChange={handleChange}
         required
         placeholder="Enter your Password"
-        className={style.input}
       />
-      {!isLoading ? (
-        <button type="submit" className={style.button}>
-          Log In
-        </button>
-      ) : (
-        <Loader />
-      )}
+      {!isLoading ? <button type="submit">Log In</button> : <Loader />}
     </form>
   );
 };

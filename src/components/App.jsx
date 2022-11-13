@@ -20,6 +20,10 @@ const LoginForm = lazy(() =>
 );
 const Application = lazy(() => import('../components/Application/Application'));
 
+const PageNotFound = lazy(() =>
+  import('../components/Application/PagNotFound/PageNotFound')
+);
+
 function App() {
   const dispatch = useDispatch();
   const { isLoadingUser } = useSelector(getAuthentication);
@@ -58,6 +62,7 @@ function App() {
                 </PrivateRoute>
               }
             />
+            <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>
       )}

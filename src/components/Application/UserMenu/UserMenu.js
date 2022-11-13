@@ -15,27 +15,24 @@ export const UserMenu = () => {
     navigate('/login');
   };
 
-  const getClassName = ({ isActive }) => {
-    return isActive ? `${style.link} ${style.active}` : style.link;
-  };
   return (
-    <nav>
-      {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
+    <nav className={style.navWrapper}>
+      {isLoggedIn && <NavLink to="/contacts">{/* Contacts */}</NavLink>}
       {isLoggedIn ? (
-        <div>
+        <div className={style.userWrapper}>
           <p>{`Welcome, ${user.name}!`}</p>
-          <button type="button" onClick={onLogoutClick}>
+          <button
+            type="button"
+            className={style.button}
+            onClick={onLogoutClick}
+          >
             Log Out
           </button>
         </div>
       ) : (
-        <div>
-          <NavLink className={getClassName} to="/register">
-            Register
-          </NavLink>
-          <NavLink className={getClassName} to="/login">
-            Login
-          </NavLink>
+        <div className={style.menuWrapper}>
+          <NavLink to="/register">Register</NavLink>
+          <NavLink to="/login">Login</NavLink>
         </div>
       )}
     </nav>

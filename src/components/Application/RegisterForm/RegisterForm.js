@@ -4,7 +4,6 @@ import { nanoid } from 'nanoid';
 import { getAuthentication } from 'redux/authentication/authenticationSlice';
 import { registerUser } from 'redux/authentication/authenticationOperation';
 import { Loader } from '../Loader/Loader';
-import style from '../ContactForm/ContactForm.module.css';
 
 const RegisterForm = () => {
   const [name, setName] = useState('');
@@ -35,10 +34,6 @@ const RegisterForm = () => {
     e.preventDefault();
 
     dispatch(registerUser({ name: name, email: email, password: password }));
-
-    setName('');
-    setEmail('');
-    setPassword('');
   };
 
   const nameId = useMemo(() => nanoid(), []);
@@ -47,9 +42,7 @@ const RegisterForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label className={style.label} htmlFor={nameId}>
-        Name
-      </label>
+      <label htmlFor={nameId}>Name</label>
       <input
         id={nameId}
         type="text"
@@ -58,9 +51,9 @@ const RegisterForm = () => {
         onChange={handleChange}
         required
         placeholder="Choose your Name"
-        className={style.input}
+        className
       />
-      <label className={style.label} htmlFor={emailId}>
+      <label className htmlFor={emailId}>
         Email
       </label>
       <input
@@ -71,9 +64,9 @@ const RegisterForm = () => {
         onChange={handleChange}
         required
         placeholder="Choose your Email"
-        className={style.input}
+        className
       />
-      <label className={style.label} htmlFor={passwordId}>
+      <label className htmlFor={passwordId}>
         Password
       </label>
       <input
@@ -84,15 +77,9 @@ const RegisterForm = () => {
         onChange={handleChange}
         required
         placeholder="Choose your Password"
-        className={style.input}
+        className
       />
-      {!isLoading ? (
-        <button type="submit" className={style.button}>
-          Sign Up
-        </button>
-      ) : (
-        <Loader />
-      )}
+      {!isLoading ? <button type="submit">Sign Up</button> : <Loader />}
     </form>
   );
 };
