@@ -1,10 +1,8 @@
 .form {
   margin-bottom: 20px;
-
-  display: block;
   text-align: center;
 }
-
+/*
 .label {
   display: flex;
   margin-bottom: 20px;
@@ -12,8 +10,9 @@
   justify-content: center;
   align-items: center;
 }
+*/
 
-.input {
+/* .input {
   display: flex;
   margin-bottom: 10px;
   padding: 5px;
@@ -32,8 +31,8 @@
 .input:invalid {
   border: 2px solid rgb(255, 5, 5);
   border-radius: 4px;
-}
-
+} */
+/*
 .addButton {
   padding: 6px 14px;
   font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
@@ -55,4 +54,4 @@
     0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
     0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
   outline: 0;
-}
+} */

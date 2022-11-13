@@ -1,4 +1,4 @@
-.navWrapper {
+/* .navWrapper {
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -9,8 +9,15 @@
 }
 
 .menuWrapper {
-  display: flex;
-  justify-content: space-between;
+  
+}
+
+.link {
+  background-color: red;
+  color: white;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase; 
 }
 
 .button {
@@ -34,4 +41,4 @@
     0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
     0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
   outline: 0;
-}
+} */

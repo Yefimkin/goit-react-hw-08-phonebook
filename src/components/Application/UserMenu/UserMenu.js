@@ -31,8 +31,12 @@ export const UserMenu = () => {
         </div>
       ) : (
         <div className={style.menuWrapper}>
-          <NavLink to="/register">Register</NavLink>
-          <NavLink to="/login">Login</NavLink>
+          <NavLink to="/register" className={style.link}>
+            Register
+          </NavLink>
+          <NavLink to="/login" className={style.link}>
+            Login
+          </NavLink>
         </div>
       )}
     </nav>

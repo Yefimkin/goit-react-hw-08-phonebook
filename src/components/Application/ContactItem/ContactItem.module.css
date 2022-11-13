@@ -1,11 +1,11 @@
-.contact {
+/* .contact {
   list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* CSS */
+
 .deleteButton {
   background-color: #f8f9fa;
   border: 1px solid #f8f9fa;
@@ -34,4 +34,4 @@
 .deleteButton:focus {
   border-color: #4285f4;
   outline: none;
-}
+} */
