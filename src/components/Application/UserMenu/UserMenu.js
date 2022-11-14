@@ -17,7 +17,7 @@ export const UserMenu = () => {
 
   return (
     <nav className={style.navWrapper}>
-      {isLoggedIn && <NavLink to="/contacts">{/* Contacts */}</NavLink>}
+      {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
       {isLoggedIn ? (
         <div className={style.userWrapper}>
           <p>{`Welcome, ${user.name}!`}</p>
